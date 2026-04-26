@@ -82,11 +82,31 @@ nav{
     z-index:1;
 }
 
-/* MID SECTION */
+/* ABOUT */
+.about{
+    padding:100px 20px;
+    text-align:center;
+    background:#141428;
+}
+
+.about img{
+    width:200px;
+    border-radius:50%;
+    margin-top:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.7);
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    line-height:2;
+    color:#bbb;
+}
+
+/* MID TEXT */
 .mid{
     padding:120px 20px;
     text-align:center;
-    background:linear-gradient(180deg,#0b0b16,#141428);
 }
 
 .mid h2{
@@ -101,42 +121,35 @@ nav{
     color:#bbb;
 }
 
-/* CARDS CTA */
-.cta-section{
-    display:flex;
-    justify-content:center;
+/* QUOTES (محافظ عليها) */
+.quotes{
+    display:grid;
     gap:20px;
-    flex-wrap:wrap;
-    padding:80px 20px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    padding:60px 20px;
 }
 
-.card{
+.quote{
     background:#15152a;
-    padding:30px;
-    border-radius:15px;
-    width:280px;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+/* CTA */
+.cta{
     text-align:center;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 60px rgba(201,162,39,0.15);
-}
-
-.card h3{
-    color:#c9a227;
+    padding:60px 20px;
 }
 
 .btn{
     display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
+    padding:12px 25px;
     background:#c9a227;
     color:#0b0b16;
     text-decoration:none;
     border-radius:25px;
+    margin-top:15px;
 }
 
 /* FOOTER */
@@ -155,10 +168,9 @@ footer{
     <a class="logo">طقوس الحظ</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (الصورة الجديدة فقط هنا) -->
 <section class="hero">
 
-    <!-- 👇 الصورة الأولى (ديالك) -->
     <img src="rachid1.jpg" alt="الشاعر">
 
     <h1>طقوس الحظ</h1>
@@ -166,33 +178,48 @@ footer{
 
 </section>
 
-<!-- MID INTRO -->
+<!-- ABOUT (حافظنا على الصور الأخرى هنا) -->
+<section class="about">
+
+    <h2 style="color:#c9a227;">الشاعر</h2>
+
+    <!-- الصورة القديمة ديال الشاعر (محفوظة) -->
+    <img src="RACHID.jpg" alt="رشيد">
+
+    <p>
+        رشيد الصويلحي - شاعر مغربي  
+        صوت يبحث عن المعنى بين الظل والنور.
+    </p>
+
+</section>
+
+<!-- MID -->
 <section class="mid">
     <h2>تمهيد</h2>
 
     <p>
         ليس هذا الديوان مجرد كلمات...  
         بل هو أثر صوت داخلي يبحث عن نفسه بين الضوء والظل.  
-        هنا لا تُقرأ القصائد فقط، بل تُعاش كطقوس صغيرة للحظ والمعنى.
+        هنا تُقرأ القصائد كطقوس للحظ والمعنى.
     </p>
 </section>
 
-<!-- CTA CARDS -->
-<section class="cta-section">
+<!-- QUOTES (محفوظة) -->
+<section class="quotes">
 
-    <!-- CARD 1 -->
-    <div class="card">
-        <h3>الشاعر</h3>
-        <p>تعرف على صاحب الرؤية والكلمة</p>
-        <a class="btn" href="#poet">عرض</a>
-    </div>
+    <div class="quote">في الرماد نولد وفي الحروف نبعث</div>
+    <div class="quote">طقوس الحظ ليست دعاء بل صبر</div>
+    <div class="quote">الكلمة حياة قبل أن تكون نصاً</div>
 
-    <!-- CARD 2 -->
-    <div class="card">
-        <h3>الديوان</h3>
-        <p>تحميل أو قراءة طقوس الحظ</p>
-        <a class="btn" href="diwan.pdf" download>تحميل PDF</a>
-    </div>
+</section>
+
+<!-- CTA (محفوظة + تحميل) -->
+<section class="cta">
+
+    <h2 style="color:#c9a227;">احصل على الديوان</h2>
+
+    <!-- تحميل PDF -->
+    <a class="btn" href="diwan.pdf" download>تحميل الديوان</a>
 
 </section>
 
