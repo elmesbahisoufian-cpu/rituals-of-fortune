@@ -33,7 +33,7 @@ nav{
     text-decoration:none;
 }
 
-/* HERO (RACHID BIG 16:9) */
+/* HERO */
 .hero{
     min-height:100vh;
     display:flex;
@@ -61,12 +61,11 @@ nav{
     object-fit:cover;
     border-radius:18px;
     box-shadow:0 40px 120px rgba(0,0,0,0.85);
-    transform: perspective(900px) rotateX(2deg);
     transition:0.5s;
 }
 
 .hero img:hover{
-    transform: scale(1.03);
+    transform:scale(1.02);
 }
 
 .hero h1{
@@ -103,24 +102,6 @@ nav{
     color:#bbb;
 }
 
-/* MID */
-.mid{
-    padding:120px 20px;
-    text-align:center;
-}
-
-.mid h2{
-    color:#c9a227;
-    font-size:2rem;
-}
-
-.mid p{
-    max-width:750px;
-    margin:auto;
-    line-height:2;
-    color:#bbb;
-}
-
 /* QUOTES */
 .quotes{
     display:grid;
@@ -136,7 +117,7 @@ nav{
     border:1px solid rgba(255,255,255,0.08);
 }
 
-/* DOWNLOAD SECTION */
+/* DOWNLOAD */
 .download{
     display:flex;
     flex-direction:column;
@@ -146,7 +127,7 @@ nav{
 }
 
 .download img{
-    width:300px;
+    width:320px;
     max-width:90%;
     border-radius:15px;
     box-shadow:0 30px 90px rgba(0,0,0,0.8);
@@ -189,7 +170,7 @@ footer{
     <a class="logo">طقوس الحظ</a>
 </nav>
 
-<!-- HERO IMAGE (RACHID BIG 16:9) -->
+<!-- HERO (rachid1.jpg) -->
 <section class="hero">
 
     <img src="rachid1.jpg" alt="الشاعر">
@@ -208,19 +189,9 @@ footer{
 
     <p>
         رشيد الصويلحي - شاعر مغربي  
-        صوت يكتب بين الضوء والظل، وبين الصمت والكلمة.
+        صوت يكتب بين الضوء والظل والمعنى.
     </p>
 
-</section>
-
-<!-- MID -->
-<section class="mid">
-    <h2>تمهيد</h2>
-
-    <p>
-        هذا الديوان ليس نصاً فقط،  
-        بل تجربة شعورية تُقرأ كطقس داخلي للمعنى والحظ.
-    </p>
 </section>
 
 <!-- QUOTES -->
@@ -232,11 +203,11 @@ footer{
 
 </section>
 
-<!-- DOWNLOAD SECTION (DIWAN IMAGE + BUTTON) -->
+<!-- DOWNLOAD (diwan.jpeg + PDF) -->
 <section class="download">
 
-    <!-- صورة الديوان -->
-    <img src="diwan.jpg" alt="ديوان طقوس الحظ">
+    <!-- الديوان -->
+    <img src="diwan.jpeg" alt="ديوان طقوس الحظ">
 
     <!-- زر التحميل -->
     <a class="btn" href="diwan.pdf" download>
