@@ -22,10 +22,8 @@ nav{
     top:0;
     width:100%;
     padding:15px 30px;
-    background:rgba(11,11,22,0.9);
+    background:rgba(11,11,22,0.85);
     backdrop-filter: blur(10px);
-    display:flex;
-    justify-content:space-between;
     z-index:1000;
 }
 
@@ -35,7 +33,7 @@ nav{
     text-decoration:none;
 }
 
-/* HERO */
+/* HERO (RACHID BIG 16:9) */
 .hero{
     min-height:100vh;
     display:flex;
@@ -44,66 +42,68 @@ nav{
     align-items:center;
     text-align:center;
     position:relative;
+    padding:80px 20px;
 }
 
 .hero::before{
     content:"";
     position:absolute;
-    width:500px;
-    height:500px;
+    width:600px;
+    height:600px;
     background:radial-gradient(circle,#c9a22733,transparent 70%);
-    filter:blur(60px);
-    z-index:0;
+    filter:blur(80px);
 }
 
 .hero img{
-    width:260px;
-    border-radius:20px;
-    box-shadow:0 30px 80px rgba(0,0,0,0.8);
-    transform: perspective(800px) rotateY(-8deg);
+    width:80%;
+    max-width:900px;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 40px 120px rgba(0,0,0,0.85);
+    transform: perspective(900px) rotateX(2deg);
     transition:0.5s;
-    z-index:1;
 }
 
 .hero img:hover{
-    transform: perspective(800px) rotateY(0deg) scale(1.05);
+    transform: scale(1.03);
 }
 
 .hero h1{
     font-size:3rem;
     color:#c9a227;
     font-family:'Aref Ruqaa',serif;
-    margin:20px 0 10px;
-    z-index:1;
+    margin-top:25px;
 }
 
 .hero p{
     color:#aaa;
-    z-index:1;
 }
 
 /* ABOUT */
 .about{
-    padding:100px 20px;
+    padding:120px 20px;
     text-align:center;
     background:#141428;
 }
 
 .about img{
-    width:200px;
+    width:220px;
+    height:220px;
+    object-fit:cover;
     border-radius:50%;
+    box-shadow:0 25px 70px rgba(0,0,0,0.8);
     margin-top:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.7);
 }
 
 .about p{
-    max-width:700px;
+    max-width:750px;
     margin:auto;
     line-height:2;
     color:#bbb;
 }
 
-/* MID TEXT */
+/* MID */
 .mid{
     padding:120px 20px;
     text-align:center;
@@ -115,13 +115,13 @@ nav{
 }
 
 .mid p{
-    max-width:700px;
+    max-width:750px;
     margin:auto;
     line-height:2;
     color:#bbb;
 }
 
-/* QUOTES (محافظ عليها) */
+/* QUOTES */
 .quotes{
     display:grid;
     gap:20px;
@@ -132,24 +132,45 @@ nav{
 .quote{
     background:#15152a;
     padding:20px;
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,0.1);
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-/* CTA */
-.cta{
+/* DOWNLOAD SECTION */
+.download{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     text-align:center;
-    padding:60px 20px;
+    padding:120px 20px;
+}
+
+.download img{
+    width:300px;
+    max-width:90%;
+    border-radius:15px;
+    box-shadow:0 30px 90px rgba(0,0,0,0.8);
+    margin-bottom:20px;
+    transition:0.4s;
+}
+
+.download img:hover{
+    transform:scale(1.05);
 }
 
 .btn{
     display:inline-block;
-    padding:12px 25px;
+    padding:14px 28px;
     background:#c9a227;
     color:#0b0b16;
     text-decoration:none;
-    border-radius:25px;
-    margin-top:15px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
 }
 
 /* FOOTER */
@@ -168,7 +189,7 @@ footer{
     <a class="logo">طقوس الحظ</a>
 </nav>
 
-<!-- HERO (الصورة الجديدة فقط هنا) -->
+<!-- HERO IMAGE (RACHID BIG 16:9) -->
 <section class="hero">
 
     <img src="rachid1.jpg" alt="الشاعر">
@@ -178,17 +199,16 @@ footer{
 
 </section>
 
-<!-- ABOUT (حافظنا على الصور الأخرى هنا) -->
+<!-- ABOUT -->
 <section class="about">
 
     <h2 style="color:#c9a227;">الشاعر</h2>
 
-    <!-- الصورة القديمة ديال الشاعر (محفوظة) -->
     <img src="RACHID.jpg" alt="رشيد">
 
     <p>
         رشيد الصويلحي - شاعر مغربي  
-        صوت يبحث عن المعنى بين الظل والنور.
+        صوت يكتب بين الضوء والظل، وبين الصمت والكلمة.
     </p>
 
 </section>
@@ -198,13 +218,12 @@ footer{
     <h2>تمهيد</h2>
 
     <p>
-        ليس هذا الديوان مجرد كلمات...  
-        بل هو أثر صوت داخلي يبحث عن نفسه بين الضوء والظل.  
-        هنا تُقرأ القصائد كطقوس للحظ والمعنى.
+        هذا الديوان ليس نصاً فقط،  
+        بل تجربة شعورية تُقرأ كطقس داخلي للمعنى والحظ.
     </p>
 </section>
 
-<!-- QUOTES (محفوظة) -->
+<!-- QUOTES -->
 <section class="quotes">
 
     <div class="quote">في الرماد نولد وفي الحروف نبعث</div>
@@ -213,13 +232,16 @@ footer{
 
 </section>
 
-<!-- CTA (محفوظة + تحميل) -->
-<section class="cta">
+<!-- DOWNLOAD SECTION (DIWAN IMAGE + BUTTON) -->
+<section class="download">
 
-    <h2 style="color:#c9a227;">احصل على الديوان</h2>
+    <!-- صورة الديوان -->
+    <img src="diwan.jpg" alt="ديوان طقوس الحظ">
 
-    <!-- تحميل PDF -->
-    <a class="btn" href="diwan.pdf" download>تحميل الديوان</a>
+    <!-- زر التحميل -->
+    <a class="btn" href="diwan.pdf" download>
+        تحميل الديوان PDF
+    </a>
 
 </section>
 
