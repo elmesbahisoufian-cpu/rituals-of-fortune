@@ -3,46 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طقوس الحظ | ديوان شعر - رشيد الصويلحي</title>
-    <meta name="description" content="طقوس الحظ - ديوان شعر للشاعر المغربي رشيد الصويلحي.">
+    <title>طقوس الحظ | ديوان شعر</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Arabic:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Arabic:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --primary:#0d0d1a;
-            --secondary:#1a1a2e;
-            --accent:#c9a227;
-            --text:#f0ece3;
-            --muted:#9a9a9a;
-            --font-ar:'IBM Plex Arabic',sans-serif;
-            --font-display:'Aref Ruqaa',serif;
-        }
-
-        *{margin:0;padding:0;box-sizing:border-box}
         body{
-            font-family:var(--font-ar);
-            background:var(--primary);
-            color:var(--text);
+            margin:0;
+            font-family:'IBM Plex Arabic',sans-serif;
+            background:#0d0d1a;
+            color:#f0ece3;
         }
 
         nav{
             position:fixed;
-            width:100%;
             top:0;
-            padding:1rem 5%;
+            width:100%;
+            padding:15px 30px;
+            background:#0d0d1a;
             display:flex;
             justify-content:space-between;
-            background:rgba(13,13,26,0.9);
             z-index:1000;
         }
 
         .logo{
-            color:var(--accent);
+            color:#c9a227;
             text-decoration:none;
-            font-family:var(--font-display);
+            font-weight:bold;
         }
 
+        section{
+            padding:80px 20px;
+        }
+
+        /* HERO */
         .hero{
             min-height:100vh;
             display:flex;
@@ -50,64 +44,83 @@
             justify-content:center;
             align-items:center;
             text-align:center;
-            padding:2rem;
         }
 
-        .hero-title{
-            font-size:4rem;
-            color:var(--accent);
-            font-family:var(--font-display);
+        .hero h1{
+            font-size:3rem;
+            color:#c9a227;
+            font-family:'Aref Ruqaa',serif;
         }
 
-        .hero-subtitle{
-            color:var(--muted);
-            margin-top:1rem;
+        .hero p{
+            color:#aaa;
         }
 
-        /* 📌 صورة الديوان */
-        .hero-book{
-            margin-top:2rem;
-        }
-
-        .diwan-cover{
+        .hero-book img{
             width:280px;
             max-width:90%;
-            border-radius:15px;
-            box-shadow:0 25px 70px rgba(0,0,0,0.6);
-            transition:0.4s;
+            margin-top:20px;
+            border-radius:12px;
+            box-shadow:0 20px 60px rgba(0,0,0,0.6);
         }
 
-        .diwan-cover:hover{
-            transform:scale(1.05);
-        }
-
-        section{
-            padding:80px 5%;
-        }
-
-        .section-title{
-            text-align:center;
-            color:var(--accent);
-            margin-bottom:2rem;
-            font-size:2rem;
-        }
-
+        /* ABOUT */
         .about{
-            background:var(--secondary);
+            background:#1a1a2e;
         }
 
-        .content{
+        .container{
             max-width:900px;
             margin:auto;
-            color:var(--muted);
             line-height:1.9;
+            color:#bbb;
+        }
+
+        /* QUOTES */
+        .quotes{
+            display:grid;
+            gap:20px;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        }
+
+        .quote{
+            background:#1a1a2e;
+            padding:20px;
+            border-radius:10px;
+            border:1px solid rgba(255,255,255,0.1);
+        }
+
+        /* POET */
+        .poet{
+            text-align:center;
+        }
+
+        .poet img{
+            width:200px;
+            border-radius:50%;
+            margin-bottom:15px;
+        }
+
+        /* CTA */
+        .cta{
+            text-align:center;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:12px 25px;
+            background:#c9a227;
+            color:#0d0d1a;
+            text-decoration:none;
+            border-radius:25px;
+            margin-top:20px;
         }
 
         footer{
             text-align:center;
-            padding:2rem;
+            padding:20px;
             border-top:1px solid rgba(255,255,255,0.1);
-            color:var(--muted);
+            color:#777;
         }
     </style>
 </head>
@@ -116,36 +129,68 @@
 
 <!-- NAV -->
 <nav>
-    <a href="#" class="logo">طقوس الحظ</a>
+    <a class="logo">طقوس الحظ</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
 
-    <h1 class="hero-title">طقوس الحظ</h1>
-    <p class="hero-subtitle">ديوان شعر - رشيد الصويلحي</p>
+    <h1>طقوس الحظ</h1>
+    <p>ديوان شعر - رشيد الصويلحي</p>
 
-    <!-- 📌 الصورة (مهم) -->
     <div class="hero-book">
-        <img src="/diwan.jpeg" class="diwan-cover" alt="غلاف الديوان">
+        <img src="/diwan.jpeg" alt="غلاف الديوان">
     </div>
 
 </section>
 
 <!-- ABOUT -->
 <section class="about">
-    <h2 class="section-title">عن الديوان</h2>
-
-    <div class="content">
-        طقوس الحظ هو ديوان شعري يعكس تجربة إنسانية عميقة،
-        حيث تتحول اللغة إلى رحلة داخل الذات، بين الألم والمعنى،
-        وبين الواقع والخيال.
+    <div class="container">
+        <h2>عن الديوان</h2>
+        <p>
+            طقوس الحظ هو ديوان شعري يعكس تجربة إنسانية عميقة،
+            بين الألم والمعنى والبحث عن الذات.
+        </p>
     </div>
+</section>
+
+<!-- QUOTES -->
+<section>
+    <h2 style="text-align:center;color:#c9a227;">اقتباسات</h2>
+
+    <div class="quotes">
+
+        <div class="quote">في الرماد نولد وفي الحروف نبعث</div>
+
+        <div class="quote">طقوس الحظ ليست دعاء بل صبر</div>
+
+        <div class="quote">الكلمة حياة قبل أن تكون نصاً</div>
+
+    </div>
+</section>
+
+<!-- POET -->
+<section class="poet">
+    <h2 style="color:#c9a227;">الشاعر</h2>
+
+    <img src="https://noor-book.com/publice/covers_cache_jpg/2/9/b/8/db68d923d29b8790f3fe3558a0b5f80f.png.jpg">
+
+    <p>رشيد الصويلحي - شاعر مغربي</p>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>احصل على الديوان</h2>
+
+    <a class="btn" href="https://noor-book.com/htdlfn2" target="_blank">
+        تحميل الآن
+    </a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    © 2026 طقوس الحظ - جميع الحقوق محفوظة
+    © 2026 طقوس الحظ
 </footer>
 
 </body>
