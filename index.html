@@ -33,50 +33,58 @@ nav{
     text-decoration:none;
 }
 
-/* HERO */
+/* HERO CINEMATIC FULL SCREEN */
 .hero{
-    min-height:100vh;
+    height:100vh;
+    width:100%;
+    position:relative;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    position:relative;
-    padding:80px 20px;
+    overflow:hidden;
 }
 
-.hero::before{
-    content:"";
+/* IMAGE COVER */
+.hero-img{
     position:absolute;
-    width:600px;
-    height:600px;
-    background:radial-gradient(circle,#c9a22733,transparent 70%);
-    filter:blur(80px);
-}
-
-.hero img{
-    width:80%;
-    max-width:900px;
-    aspect-ratio:16/9;
+    width:100%;
+    height:100%;
     object-fit:cover;
-    border-radius:18px;
-    box-shadow:0 40px 120px rgba(0,0,0,0.85);
-    transition:0.5s;
+    transform:scale(1.1);
+    filter:contrast(1.15) brightness(0.65) saturate(1.2);
 }
 
-.hero img:hover{
-    transform:scale(1.02);
+/* CINEMATIC OVERLAY */
+.hero-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+        radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85)),
+        linear-gradient(to top, #0b0b16 10%, transparent 60%);
+    z-index:1;
 }
 
-.hero h1{
-    font-size:3rem;
+/* TEXT */
+.hero-text{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    animation:fadeIn 1.8s ease;
+}
+
+.hero-text h1{
+    font-size:4rem;
     color:#c9a227;
     font-family:'Aref Ruqaa',serif;
-    margin-top:25px;
+    text-shadow:0 15px 40px rgba(0,0,0,0.8);
+    margin:0;
 }
 
-.hero p{
-    color:#aaa;
+.hero-text p{
+    color:#ddd;
+    margin-top:10px;
+    letter-spacing:1px;
 }
 
 /* ABOUT */
@@ -161,6 +169,12 @@ footer{
     color:#666;
     border-top:1px solid rgba(255,255,255,0.1);
 }
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
 </style>
 </head>
 
@@ -170,13 +184,17 @@ footer{
     <a class="logo">طقوس الحظ</a>
 </nav>
 
-<!-- HERO (rachid1.jpg) -->
+<!-- HERO CINEMATIC -->
 <section class="hero">
 
-    <img src="rachid1.jpg" alt="الشاعر">
+    <img class="hero-img" src="rachid1.jpg" alt="الشاعر">
 
-    <h1>طقوس الحظ</h1>
-    <p>ديوان شعر - رحلة بين المعنى والقدر</p>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+        <h1>طقوس الحظ</h1>
+        <p>ديوان شعر - رحلة بين المعنى والقدر</p>
+    </div>
 
 </section>
 
@@ -203,13 +221,11 @@ footer{
 
 </section>
 
-<!-- DOWNLOAD (diwan.jpeg + PDF) -->
+<!-- DOWNLOAD -->
 <section class="download">
 
-    <!-- الديوان -->
     <img src="diwan.jpeg" alt="ديوان طقوس الحظ">
 
-    <!-- زر التحميل -->
     <a class="btn" href="diwan.pdf" download>
         تحميل الديوان PDF
     </a>
