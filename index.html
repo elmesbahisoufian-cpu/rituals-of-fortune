@@ -90,15 +90,60 @@
             border:1px solid rgba(255,255,255,0.1);
         }
 
-        /* POET */
-        .poet{
-            text-align:center;
+        /* POET (CINEMATIC) */
+        .poet {
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at top, #1f1f3a, #0d0d1a);
+            position: relative;
         }
 
-        .poet img{
-            width:200px;
-            border-radius:50%;
-            margin-bottom:15px;
+        .poet::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201,162,39,0.15), transparent 70%);
+            filter: blur(40px);
+            z-index: 0;
+        }
+
+        .poet img {
+            width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            border: 3px solid rgba(201,162,39,0.5);
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.7),
+                0 0 25px rgba(201,162,39,0.3);
+            transition: all 0.4s ease;
+        }
+
+        .poet img:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.9),
+                0 0 40px rgba(201,162,39,0.6);
+        }
+
+        .poet h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 2rem;
+            color:#c9a227;
+        }
+
+        .poet p {
+            color: #aaa;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1px;
         }
 
         /* CTA */
@@ -127,24 +172,19 @@
 
 <body>
 
-<!-- NAV -->
 <nav>
     <a class="logo">طقوس الحظ</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-
     <h1>طقوس الحظ</h1>
     <p>ديوان شعر - رشيد الصويلحي</p>
 
     <div class="hero-book">
-        <img src="/diwan.jpeg" alt="غلاف الديوان">
+        <img src="diwan.jpeg" alt="غلاف الديوان">
     </div>
-
 </section>
 
-<!-- ABOUT -->
 <section class="about">
     <div class="container">
         <h2>عن الديوان</h2>
@@ -155,31 +195,30 @@
     </div>
 </section>
 
-<!-- QUOTES -->
 <section>
     <h2 style="text-align:center;color:#c9a227;">اقتباسات</h2>
 
     <div class="quotes">
-
         <div class="quote">في الرماد نولد وفي الحروف نبعث</div>
-
         <div class="quote">طقوس الحظ ليست دعاء بل صبر</div>
-
         <div class="quote">الكلمة حياة قبل أن تكون نصاً</div>
-
     </div>
 </section>
 
 <!-- POET -->
 <section class="poet">
-    <h2 style="color:#c9a227;">الشاعر</h2>
+    <h2>الشاعر</h2>
 
-    <img src="https://noor-book.com/publice/covers_cache_jpg/2/9/b/8/db68d923d29b8790f3fe3558a0b5f80f.png.jpg">
+    <!-- ⚠️ هنا الصورة ديالك -->
+    <img src="rachid.jpg" alt="رشيد الصويلحي">
 
     <p>رشيد الصويلحي - شاعر مغربي</p>
+
+    <p style="font-style:italic; opacity:0.7;">
+        "أكتب لأن الصمت لم يعد يكفي..."
+    </p>
 </section>
 
-<!-- CTA -->
 <section class="cta">
     <h2>احصل على الديوان</h2>
 
@@ -188,7 +227,6 @@
     </a>
 </section>
 
-<!-- FOOTER -->
 <footer>
     © 2026 طقوس الحظ
 </footer>
