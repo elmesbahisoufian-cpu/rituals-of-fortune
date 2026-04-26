@@ -1,240 +1,99 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طقوس الحظ | ديوان شعر</title>
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
 
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Arabic:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- COUVERTURE CINEMATIC -->
+  <img class="hero-img"
+       src="rachid1.jpg"
+       alt="الشاعر رشيد الصويلحي"
+       style="object-fit:cover;width:100%;height:100%;"
+       onerror="this.style.display='none'">
 
-<style>
-body{
-    margin:0;
-    font-family:'IBM Plex Arabic',sans-serif;
-    background:#0b0b16;
-    color:#f5f1e6;
-    overflow-x:hidden;
-}
+  <div class="hero-overlay"></div>
 
-/* NAV */
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:15px 30px;
-    background:rgba(11,11,22,0.85);
-    backdrop-filter: blur(10px);
-    z-index:1000;
-}
+  <div class="hero-text">
+    <p class="hero-eyebrow">ديوان شعر — رشيد الصويلحي</p>
+    <h1 class="hero-title">طقوس الحظ</h1>
 
-.logo{
-    color:#c9a227;
-    font-weight:bold;
-    text-decoration:none;
-}
-
-/* HERO CINEMATIC FULL SCREEN */
-.hero{
-    height:100vh;
-    width:100%;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-}
-
-/* IMAGE COVER */
-.hero-img{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transform:scale(1.1);
-    filter:contrast(1.15) brightness(0.65) saturate(1.2);
-}
-
-/* CINEMATIC OVERLAY */
-.hero-overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:
-        radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85)),
-        linear-gradient(to top, #0b0b16 10%, transparent 60%);
-    z-index:1;
-}
-
-/* TEXT */
-.hero-text{
-    position:relative;
-    z-index:2;
-    text-align:center;
-    animation:fadeIn 1.8s ease;
-}
-
-.hero-text h1{
-    font-size:4rem;
-    color:#c9a227;
-    font-family:'Aref Ruqaa',serif;
-    text-shadow:0 15px 40px rgba(0,0,0,0.8);
-    margin:0;
-}
-
-.hero-text p{
-    color:#ddd;
-    margin-top:10px;
-    letter-spacing:1px;
-}
-
-/* ABOUT */
-.about{
-    padding:120px 20px;
-    text-align:center;
-    background:#141428;
-}
-
-.about img{
-    width:220px;
-    height:220px;
-    object-fit:cover;
-    border-radius:50%;
-    box-shadow:0 25px 70px rgba(0,0,0,0.8);
-    margin-top:20px;
-}
-
-.about p{
-    max-width:750px;
-    margin:auto;
-    line-height:2;
-    color:#bbb;
-}
-
-/* QUOTES */
-.quotes{
-    display:grid;
-    gap:20px;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    padding:60px 20px;
-}
-
-.quote{
-    background:#15152a;
-    padding:20px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,0.08);
-}
-
-/* DOWNLOAD */
-.download{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    padding:120px 20px;
-}
-
-.download img{
-    width:320px;
-    max-width:90%;
-    border-radius:15px;
-    box-shadow:0 30px 90px rgba(0,0,0,0.8);
-    margin-bottom:20px;
-    transition:0.4s;
-}
-
-.download img:hover{
-    transform:scale(1.05);
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 28px;
-    background:#c9a227;
-    color:#0b0b16;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    color:#666;
-    border-top:1px solid rgba(255,255,255,0.1);
-}
-
-/* ANIMATION */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-    <a class="logo">طقوس الحظ</a>
-</nav>
-
-<!-- HERO CINEMATIC -->
-<section class="hero">
-
-    <img class="hero-img" src="rachid1.jpg" alt="الشاعر">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-text">
-        <h1>طقوس الحظ</h1>
-        <p>ديوان شعر - رحلة بين المعنى والقدر</p>
-    </div>
-
-</section>
-
-<!-- ABOUT -->
-<section class="about">
-
-    <h2 style="color:#c9a227;">الشاعر</h2>
-
-    <img src="RACHID.jpg" alt="رشيد">
-
-    <p>
-        رشيد الصويلحي - شاعر مغربي  
-        صوت يكتب بين الضوء والظل والمعنى.
+    <p class="hero-subtitle">
+      رحلةٌ بين المعنى والقدر<br>
+      حيث تُصبح الكلمة حياةً قبل أن تكون نصًّا
     </p>
 
-</section>
-
-<!-- QUOTES -->
-<section class="quotes">
-
-    <div class="quote">في الرماد نولد وفي الحروف نبعث</div>
-    <div class="quote">طقوس الحظ ليست دعاء بل صبر</div>
-    <div class="quote">الكلمة حياة قبل أن تكون نصاً</div>
+    <div class="hero-cta-group">
+      <a href="#book" class="btn-primary">⬇ تحميل الديوان</a>
+      <a href="#poems" class="btn-outline">اكتشف القصائد</a>
+    </div>
+  </div>
 
 </section>
 
-<!-- DOWNLOAD -->
-<section class="download">
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
 
-    <img src="diwan.jpeg" alt="ديوان طقوس الحظ">
+  <div class="about-visual">
+    <div class="about-img-wrap">
 
-    <a class="btn" href="diwan.pdf" download>
-        تحميل الديوان PDF
-    </a>
+      <!-- SHAAIR IMAGE -->
+      <img class="about-img"
+           src="RACHID.jpg"
+           alt="رشيد الصويلحي"
+           style="object-fit:cover"
+           onerror="this.style.display='none'">
+
+      <div class="about-img-placeholder" style="display:none">🖊️</div>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <div class="section-label">الشاعر</div>
+
+    <h2 class="section-title">رشيد الصويلحي</h2>
+
+    <p>
+      شاعر مغربي ينحت كلماته من صلب التجربة الإنسانية،
+      يكتب بين الضوء والظل، بين الصمت والمعنى.
+    </p>
+  </div>
 
 </section>
 
-<footer>
-    © 2026 طقوس الحظ - Elmesbahi Vision
-</footer>
+<!-- ===================== BOOK ===================== -->
+<section class="book-section" id="book">
 
-</body>
-</html>
+  <div class="book-inner">
+
+    <div class="book-content">
+      <div class="section-label">الديوان</div>
+
+      <h2>طقوس الحظ</h2>
+
+      <p>
+        ديوان شعري يجمع بين التجربة والبحث عن المعنى.
+      </p>
+
+      <!-- DOWNLOAD BUTTON -->
+      <div class="book-cta">
+        <a class="btn-primary" href="diwan.jpeg" download>
+          ⬇ تحميل الديوان
+        </a>
+      </div>
+    </div>
+
+    <!-- BOOK COVER -->
+    <div class="book-visual">
+
+      <div class="book-mockup">
+
+        <img class="book-img"
+             src="diwan.jpeg"
+             alt="ديوان طقوس الحظ"
+             style="width:320px;max-width:100%;border-radius:18px;object-fit:cover"
+             onerror="this.style.display='none'">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
