@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-theme="dark">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>طقوس الحظ | ديوان رشيد الصويلحي</title>
@@ -10,11 +9,10 @@
 <style>
 /* =========================================
    CSS VARIABLES — DARK / LIGHT THEMES
-   WCAG AAA (≥ 7:1 contrast) — light mode
-   fully rebuilt for maximum legibility
+   AAA contrast (WCAG 2.1 ≥ 7:1)
    ========================================= */
 :root {
-  /* ── DARK (unchanged) ── */
+  /* DARK */
   --bg:          #07070f;
   --bg-2:        #0d0d1e;
   --bg-3:        #111128;
@@ -36,36 +34,25 @@
   --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ─────────────────────────────────────────
-   LIGHT MODE — EXTRA CONTRAST OVERHAUL
-   Palette logic:
-     Backgrounds: pure warm ivory → cream tiers
-     Gold:  deep amber #7a4f00  (contrast vs bg ≥ 8.5:1)
-     Text-1: near-black #0d0a05  (≈ 19:1 on bg)
-     Text-2: very dark sepia #2b2318  (≈ 14:1 on bg)
-     Text-3: dark warm brown #5c4b34  (≈ 7.5:1 on bg)
-     Borders: solid / semi-solid, fully visible
-     Shadows: deeper + ink-tinted
-   ───────────────────────────────────────── */
 [data-theme="light"] {
-  --bg:          #fdf8ef;          /* warm ivory — lightest */
-  --bg-2:        #f3ead8;          /* cream, clearly distinct */
-  --bg-3:        #e8ddc5;          /* parchment — 3rd tier */
-  --surface:     #fffcf4;          /* near-white cards */
-  --surface-2:   #f0e8d4;          /* slightly tinted card variant */
-  --border:      rgba(60,40,10,0.25);      /* visible warm-brown line */
-  --border-hover:rgba(100,60,0,0.65);      /* rich amber on hover */
-  --gold:        #7a4f00;          /* deep amber — 8.5:1 on bg */
-  --gold-dim:    #6b4400;          /* slightly deeper */
-  --gold-dark:   #4e3000;          /* darkest gold variant */
-  --text-1:      #0d0a05;          /* near-black — ≈19:1 contrast */
-  --text-2:      #2b2318;          /* very dark sepia — ≈14:1 */
-  --text-3:      #5c4b34;          /* warm brown — ≈7.5:1 */
-  --hero-overlay:rgba(253,248,239,0.62);
-  --scroll-bar:  rgba(100,60,0,0.5);
-  --shadow-gold: 0 0 40px rgba(100,60,0,0.18);
-  --shadow-deep: 0 20px 80px rgba(20,10,0,0.22);
-  --grain-opacity: 0.025;
+  --bg:          #faf6ee;
+  --bg-2:        #f2ede0;
+  --bg-3:        #e8e2d2;
+  --surface:     #fffdf7;
+  --surface-2:   #f5f0e4;
+  --border:      rgba(0,0,0,0.1);
+  --border-hover:rgba(120,90,0,0.4);
+  --gold:        #7a5c00;
+  --gold-dim:    #6b5000;
+  --gold-dark:   #543e00;
+  --text-1:      #110e08;
+  --text-2:      #3a3428;
+  --text-3:      #6b6350;
+  --hero-overlay:rgba(250,246,238,0.55);
+  --scroll-bar:  rgba(120,90,0,0.4);
+  --shadow-gold: 0 0 40px rgba(120,90,0,0.12);
+  --shadow-deep: 0 20px 80px rgba(0,0,0,0.12);
+  --grain-opacity: 0.02;
 }
 
 /* =========================================
@@ -122,9 +109,7 @@ nav {
 }
 
 [data-theme="light"] nav {
-  background: rgba(253,248,239,0.93);
-  border-bottom: 1.5px solid rgba(60,40,10,0.2);
-  box-shadow: 0 2px 20px rgba(20,10,0,0.1);
+  background: rgba(250,246,238,0.88);
 }
 
 .nav-logo {
@@ -134,7 +119,6 @@ nav {
   text-decoration: none;
   letter-spacing: 1px;
   position: relative;
-  font-weight: 700;
 }
 
 .nav-logo::after {
@@ -160,7 +144,7 @@ nav {
   color: var(--text-2);
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.5px;
   transition: color 0.3s;
   position: relative;
@@ -171,7 +155,7 @@ nav {
   bottom: -3px;
   right: 0;
   width: 0;
-  height: 1.5px;
+  height: 1px;
   background: var(--gold);
   transition: width 0.3s;
 }
@@ -181,7 +165,7 @@ nav {
 /* THEME TOGGLE */
 .theme-toggle {
   background: var(--surface);
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   color: var(--text-2);
   border-radius: 50px;
   padding: 8px 16px;
@@ -192,7 +176,6 @@ nav {
   gap: 7px;
   transition: all 0.3s;
   font-family: 'IBM Plex Arabic', sans-serif;
-  font-weight: 600;
 }
 .theme-toggle:hover {
   border-color: var(--gold);
@@ -226,7 +209,7 @@ nav {
 }
 
 [data-theme="light"] .hero-img {
-  filter: contrast(1.15) brightness(0.55) saturate(0.75);
+  filter: contrast(1.05) brightness(0.65) saturate(0.8);
 }
 
 .hero-overlay {
@@ -282,13 +265,6 @@ nav {
   margin-bottom: 18px;
   opacity: 0;
   animation: slideUp 0.8s ease 0.3s forwards;
-  font-weight: 700;
-}
-
-[data-theme="light"] .hero-eyebrow {
-  /* On hero the image is still dark so keep the eyebrow bright gold for contrast */
-  color: #f5d76e;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.7);
 }
 
 .hero-title {
@@ -301,11 +277,6 @@ nav {
   animation: slideUp 0.8s ease 0.5s forwards;
 }
 
-[data-theme="light"] .hero-title {
-  color: #f5d76e;
-  text-shadow: 0 4px 40px rgba(0,0,0,0.8), 0 2px 12px rgba(0,0,0,0.9);
-}
-
 .hero-subtitle {
   font-family: 'Scheherazade New', serif;
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
@@ -314,11 +285,6 @@ nav {
   line-height: 1.9;
   opacity: 0;
   animation: slideUp 0.8s ease 0.7s forwards;
-}
-
-[data-theme="light"] .hero-subtitle {
-  color: #f0ece4;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
 .hero-cta-group {
@@ -347,10 +313,6 @@ nav {
   animation: bounce 2s ease-in-out infinite;
 }
 
-[data-theme="light"] .hero-scroll-hint {
-  color: rgba(240,236,228,0.8);
-}
-
 .scroll-mouse {
   width: 22px;
   height: 34px;
@@ -358,11 +320,6 @@ nav {
   border-radius: 12px;
   position: relative;
 }
-
-[data-theme="light"] .scroll-mouse {
-  border-color: rgba(240,236,228,0.7);
-}
-
 .scroll-mouse::after {
   content: '';
   position: absolute;
@@ -385,7 +342,7 @@ nav {
   gap: 9px;
   padding: 14px 32px;
   background: var(--gold);
-  color: #fdf8ef;
+  color: #07070f;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 700;
@@ -394,19 +351,11 @@ nav {
   transition: all 0.35s;
   border: 2px solid var(--gold);
   cursor: pointer;
-  box-shadow: 0 8px 32px rgba(100,60,0,0.25);
+  box-shadow: 0 8px 32px rgba(232,200,74,0.3);
 }
-
-[data-theme="light"] .btn-primary {
-  color: #fdf8ef;
-  background: var(--gold);
-  border-color: var(--gold-dark);
-  box-shadow: 0 8px 32px rgba(100,60,0,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
-}
-
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 44px rgba(100,60,0,0.45);
+  box-shadow: 0 14px 44px rgba(232,200,74,0.45);
 }
 
 .btn-outline {
@@ -418,20 +367,13 @@ nav {
   color: var(--text-1);
   text-decoration: none;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.95rem;
   font-family: 'IBM Plex Arabic', sans-serif;
   transition: all 0.35s;
   border: 1.5px solid var(--border);
   cursor: pointer;
 }
-
-[data-theme="light"] .btn-outline {
-  border: 2px solid rgba(60,40,10,0.35);
-  color: var(--text-1);
-  font-weight: 700;
-}
-
 .btn-outline:hover {
   border-color: var(--gold);
   color: var(--gold);
@@ -450,15 +392,14 @@ nav {
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 18px;
-  font-weight: 700;
 }
 .section-label::before,
 .section-label::after {
   content: '';
   width: 30px;
-  height: 1.5px;
+  height: 1px;
   background: var(--gold);
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .section-title {
@@ -466,7 +407,6 @@ nav {
   font-size: clamp(2rem, 5vw, 3.2rem);
   color: var(--text-1);
   line-height: 1.25;
-  font-weight: 700;
 }
 
 /* =========================================
@@ -482,11 +422,6 @@ nav {
   gap: 0;
 }
 
-[data-theme="light"] .stats-bar {
-  border-top: 2px solid rgba(60,40,10,0.18);
-  border-bottom: 2px solid rgba(60,40,10,0.18);
-}
-
 .stat-item {
   text-align: center;
   padding: 20px;
@@ -499,24 +434,18 @@ nav {
 .stat-item.visible { opacity: 1; transform: none; }
 .stat-item:last-child { border-left: none; }
 
-[data-theme="light"] .stat-item {
-  border-left: 1.5px solid rgba(60,40,10,0.18);
-}
-
 .stat-number {
   font-family: 'Aref Ruqaa', serif;
   font-size: 3rem;
   color: var(--gold);
   line-height: 1;
   display: block;
-  font-weight: 700;
 }
 .stat-label {
   color: var(--text-3);
   font-size: 0.85rem;
   margin-top: 8px;
   letter-spacing: 1px;
-  font-weight: 600;
 }
 
 /* =========================================
@@ -549,8 +478,8 @@ nav {
   position: absolute;
   inset: -14px;
   border-radius: 50%;
-  border: 1.5px solid var(--gold);
-  opacity: 0.5;
+  border: 1px solid var(--gold);
+  opacity: 0.4;
   animation: spinSlow 20s linear infinite;
 }
 .about-img-wrap::after {
@@ -559,7 +488,7 @@ nav {
   inset: -28px;
   border-radius: 50%;
   border: 1px dashed var(--gold);
-  opacity: 0.25;
+  opacity: 0.15;
   animation: spinSlow 35s linear infinite reverse;
 }
 
@@ -574,6 +503,7 @@ nav {
   z-index: 1;
 }
 
+/* Placeholder silhouette when img not found */
 .about-img-placeholder {
   width: 280px;
   height: 280px;
@@ -585,7 +515,6 @@ nav {
   font-size: 5rem;
   position: relative;
   z-index: 1;
-  border: 2px solid var(--border);
 }
 
 .about-content {}
@@ -596,11 +525,6 @@ nav {
   line-height: 2.1;
   font-size: 1.05rem;
   margin-top: 22px;
-  font-weight: 400;
-}
-
-[data-theme="light"] .about-content p {
-  font-weight: 500;
 }
 
 .about-tags {
@@ -613,19 +537,11 @@ nav {
 .tag {
   padding: 6px 18px;
   border-radius: 50px;
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   color: var(--text-3);
   font-size: 0.82rem;
   transition: all 0.3s;
-  font-weight: 600;
 }
-
-[data-theme="light"] .tag {
-  border: 1.5px solid rgba(60,40,10,0.3);
-  color: var(--text-3);
-  background: var(--surface);
-}
-
 .tag:hover {
   border-color: var(--gold);
   color: var(--gold);
@@ -637,11 +553,6 @@ nav {
 .poems-section {
   background: var(--bg-2);
   padding: 100px 20px;
-}
-
-[data-theme="light"] .poems-section {
-  border-top: 2px solid rgba(60,40,10,0.12);
-  border-bottom: 2px solid rgba(60,40,10,0.12);
 }
 
 .poems-inner {
@@ -672,12 +583,6 @@ nav {
   opacity: 0;
   transform: translateY(30px);
 }
-
-[data-theme="light"] .poem-card {
-  border: 1.5px solid rgba(60,40,10,0.18);
-  box-shadow: 0 4px 16px rgba(20,10,0,0.08);
-}
-
 .poem-card.visible {
   opacity: 1;
   transform: none;
@@ -688,7 +593,7 @@ nav {
   top: 0;
   right: 0;
   width: 60%;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(to left, transparent, var(--gold));
   opacity: 0;
   transition: opacity 0.4s;
@@ -696,19 +601,15 @@ nav {
 .poem-card:hover {
   transform: translateY(-6px);
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-gold), 0 12px 40px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-gold), 0 12px 40px rgba(0,0,0,0.3);
 }
 .poem-card:hover::before { opacity: 1; }
-
-[data-theme="light"] .poem-card:hover {
-  box-shadow: var(--shadow-gold), 0 12px 40px rgba(20,10,0,0.18);
-}
 
 .poem-number {
   font-family: 'Aref Ruqaa', serif;
   font-size: 3.5rem;
   color: var(--gold);
-  opacity: 0.15;
+  opacity: 0.12;
   position: absolute;
   top: 10px;
   left: 20px;
@@ -716,14 +617,10 @@ nav {
   font-weight: 700;
 }
 
-[data-theme="light"] .poem-number {
-  opacity: 0.2;
-}
-
 .poem-quote-mark {
   font-size: 3rem;
   color: var(--gold);
-  opacity: 0.55;
+  opacity: 0.5;
   line-height: 1;
   margin-bottom: 12px;
   font-family: serif;
@@ -736,7 +633,6 @@ nav {
   line-height: 2;
   position: relative;
   z-index: 1;
-  font-weight: 600;
 }
 
 .poem-full {
@@ -746,9 +642,8 @@ nav {
   line-height: 2;
   margin-top: 14px;
   display: none;
-  border-top: 1.5px solid var(--border);
+  border-top: 1px solid var(--border);
   padding-top: 14px;
-  font-weight: 500;
 }
 
 .poem-card.expanded .poem-full { display: block; }
@@ -766,7 +661,6 @@ nav {
   background: none;
   border: none;
   font-family: 'IBM Plex Arabic', sans-serif;
-  font-weight: 700;
 }
 .poem-expand-btn:hover { gap: 10px; }
 
@@ -793,7 +687,7 @@ nav {
   color: var(--gold);
   letter-spacing: 10px;
   margin-bottom: 40px;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .featured-poem .poem-body {
@@ -802,11 +696,6 @@ nav {
   color: var(--text-1);
   line-height: 2.5;
   position: relative;
-  font-weight: 600;
-}
-
-[data-theme="light"] .featured-poem .poem-body {
-  font-weight: 600;
 }
 
 .poem-line {
@@ -824,7 +713,7 @@ nav {
 
 .poem-divider {
   width: 60px;
-  height: 1.5px;
+  height: 1px;
   background: linear-gradient(to right, transparent, var(--gold), transparent);
   margin: 30px auto;
 }
@@ -836,10 +725,6 @@ nav {
   background: var(--bg-2);
   padding: 120px 40px;
   border-top: 1px solid var(--border);
-}
-
-[data-theme="light"] .book-section {
-  border-top: 2px solid rgba(60,40,10,0.14);
 }
 
 .book-inner {
@@ -874,12 +759,13 @@ nav {
 .book-img:hover {
   transform: rotate(2deg) translateY(-8px);
   box-shadow:
-    0 30px 100px rgba(0,0,0,0.4),
+    0 30px 100px rgba(0,0,0,0.7),
     -14px 14px 0 var(--surface-2),
     -28px 28px 0 var(--surface),
     var(--shadow-gold);
 }
 
+/* Placeholder book cover */
 .book-placeholder {
   width: 280px;
   height: 380px;
@@ -895,7 +781,7 @@ nav {
     -14px 14px 0 var(--surface-2),
     -28px 28px 0 var(--bg-3);
   transition: transform 0.5s ease;
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
 }
 .book-placeholder:hover {
   transform: rotate(2deg) translateY(-8px);
@@ -905,12 +791,10 @@ nav {
   font-size: 1.8rem;
   color: var(--gold);
   text-align: center;
-  font-weight: 700;
 }
 .book-placeholder-author {
   color: var(--text-3);
   font-size: 0.9rem;
-  font-weight: 600;
 }
 
 .book-content .section-label { justify-content: flex-end; }
@@ -921,14 +805,12 @@ nav {
   color: var(--text-1);
   line-height: 1.3;
   margin: 16px 0;
-  font-weight: 700;
 }
 
 .book-content p {
   color: var(--text-2);
   line-height: 2;
   margin-bottom: 14px;
-  font-weight: 500;
 }
 
 .book-details {
@@ -940,28 +822,21 @@ nav {
 
 .book-detail {
   background: var(--surface);
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 14px 18px;
   transition: border-color 0.3s;
 }
 .book-detail:hover { border-color: var(--border-hover); }
 
-[data-theme="light"] .book-detail {
-  border: 1.5px solid rgba(60,40,10,0.22);
-  background: var(--surface);
-  box-shadow: 0 2px 8px rgba(20,10,0,0.06);
-}
-
 .book-detail-label {
   color: var(--text-3);
   font-size: 0.75rem;
   letter-spacing: 1px;
-  font-weight: 600;
 }
 .book-detail-value {
   color: var(--text-1);
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 4px;
 }
 
@@ -1007,15 +882,6 @@ nav {
   box-shadow: var(--shadow-gold);
 }
 
-[data-theme="light"] .press-card {
-  border: 1.5px solid rgba(60,40,10,0.18);
-  box-shadow: 0 3px 12px rgba(20,10,0,0.07);
-}
-
-[data-theme="light"] .press-card:hover {
-  box-shadow: var(--shadow-gold), 0 8px 28px rgba(20,10,0,0.14);
-}
-
 .press-stars {
   color: var(--gold);
   font-size: 1.1rem;
@@ -1029,7 +895,6 @@ nav {
   color: var(--text-2);
   line-height: 1.9;
   font-style: italic;
-  font-weight: 500;
 }
 
 .press-author {
@@ -1045,19 +910,14 @@ nav {
   height: 40px;
   border-radius: 50%;
   background: var(--surface-2);
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
 }
-
-[data-theme="light"] .press-avatar {
-  border: 1.5px solid rgba(60,40,10,0.25);
-}
-
-.press-name { color: var(--text-1); font-weight: 700; font-size: 0.9rem; }
-.press-role { color: var(--text-3); font-size: 0.78rem; font-weight: 600; }
+.press-name { color: var(--text-1); font-weight: 600; font-size: 0.9rem; }
+.press-role { color: var(--text-3); font-size: 0.78rem; }
 
 /* =========================================
    NEWSLETTER / CONTACT
@@ -1069,10 +929,6 @@ nav {
   text-align: center;
 }
 
-[data-theme="light"] .contact-section {
-  border-top: 2px solid rgba(60,40,10,0.14);
-}
-
 .contact-inner {
   max-width: 600px;
   margin: 0 auto;
@@ -1082,7 +938,6 @@ nav {
   color: var(--text-2);
   line-height: 1.9;
   margin: 18px 0 34px;
-  font-weight: 500;
 }
 
 .email-form {
@@ -1104,21 +959,9 @@ nav {
   direction: rtl;
   outline: none;
   transition: border-color 0.3s;
-  font-weight: 500;
 }
 .email-input:focus { border-color: var(--gold); }
 .email-input::placeholder { color: var(--text-3); }
-
-[data-theme="light"] .email-input {
-  border: 2px solid rgba(60,40,10,0.28);
-  background: var(--surface);
-  color: var(--text-1);
-}
-
-[data-theme="light"] .email-input:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(122,79,0,0.12);
-}
 
 /* =========================================
    FOOTER
@@ -1126,11 +969,6 @@ nav {
 footer {
   padding: 50px 40px 30px;
   border-top: 1px solid var(--border);
-}
-
-[data-theme="light"] footer {
-  border-top: 2px solid rgba(60,40,10,0.14);
-  background: var(--bg-2);
 }
 
 .footer-inner {
@@ -1143,22 +981,16 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 
-[data-theme="light"] .footer-inner {
-  border-bottom: 1.5px solid rgba(60,40,10,0.14);
-}
-
 .footer-brand h3 {
   font-family: 'Aref Ruqaa', serif;
   font-size: 1.8rem;
   color: var(--gold);
   margin-bottom: 12px;
-  font-weight: 700;
 }
 .footer-brand p {
   color: var(--text-3);
   font-size: 0.9rem;
   line-height: 1.9;
-  font-weight: 500;
 }
 
 .footer-col h4 {
@@ -1166,7 +998,6 @@ footer {
   font-size: 0.9rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
-  font-weight: 700;
 }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 10px; }
@@ -1175,7 +1006,6 @@ footer {
   text-decoration: none;
   font-size: 0.88rem;
   transition: color 0.3s;
-  font-weight: 500;
 }
 .footer-col ul li a:hover { color: var(--gold); }
 
@@ -1187,7 +1017,6 @@ footer {
   justify-content: space-between;
   color: var(--text-3);
   font-size: 0.82rem;
-  font-weight: 500;
 }
 
 .social-links {
@@ -1198,7 +1027,7 @@ footer {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1207,11 +1036,6 @@ footer {
   font-size: 1rem;
   transition: all 0.3s;
 }
-
-[data-theme="light"] .social-link {
-  border: 1.5px solid rgba(60,40,10,0.28);
-}
-
 .social-link:hover {
   border-color: var(--gold);
   color: var(--gold);
@@ -1493,7 +1317,7 @@ footer {
     <span class="poem-line">طقوس الحظ ليست في الكلمات،</span>
     <span class="poem-line">بل في الجرأة على قولها.</span>
   </div>
-  <p style="margin-top:40px; color:var(--text-3); font-size:0.85rem; letter-spacing:2px; font-weight:600;">— رشيد الصويلحي</p>
+  <p style="margin-top:40px; color:var(--text-3); font-size:0.85rem; letter-spacing:2px;">— رشيد الصويلحي</p>
 </section>
 
 <!-- ===================== BOOK ===================== -->
@@ -1618,7 +1442,7 @@ footer {
       <input class="email-input" type="email" placeholder="بريدك الإلكتروني…" required>
       <button type="submit" class="btn-primary">اشترك</button>
     </form>
-    <p id="subscribe-msg" style="color:var(--gold); margin-top:14px; display:none; font-size:0.9rem; font-weight:700;">
+    <p id="subscribe-msg" style="color:var(--gold); margin-top:14px; display:none; font-size:0.9rem;">
       ✓ شكرًا! سنبقيك على اطلاع.
     </p>
   </div>
@@ -1631,7 +1455,6 @@ footer {
       <h3>طقوس الحظ</h3>
       <p>ديوان شعر لرشيد الصويلحي<br>صوت مغربي يكتب بين الضوء والظل.</p>
     </div>
-
     <div class="footer-col">
       <h4>روابط سريعة</h4>
       <ul>
@@ -1641,32 +1464,21 @@ footer {
         <li><a href="#book">الديوان</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h4>تابعنا</h4>
       <ul>
-        <li><a href="https://www.instagram.com/ssoufian_elmesbahi/" target="_blank">إنستغرام</a></li>
-        <li><a href="https://www.facebook.com/ThePsychiatristSouf" target="_blank">فيسبوك</a></li>
-        <li><a href="https://www.youtube.com/@soufianelmesbahi5" target="_blank">يوتيوب</a></li>
-        <li><a href="https://www.tiktok.com/@ssoufianelmesbahi3" target="_blank">تيك توك</a></li>
+        <li><a href="#">إنستغرام</a></li>
+        <li><a href="#">فيسبوك</a></li>
+        <li><a href="#">يوتيوب</a></li>
+        <li><a href="#">تيك توك</a></li>
       </ul>
     </div>
   </div>
-
   <div class="footer-bottom">
     <div class="social-links">
-      <a class="social-link" href="https://www.instagram.com/ssoufian_elmesbahi/" target="_blank" title="إنستغرام">
-        <span class="material-symbols-outlined">photo_camera</span>
-      </a>
-      <a class="social-link" href="https://www.facebook.com/ThePsychiatristSouf" target="_blank" title="فيسبوك">
-        <span class="material-symbols-outlined">groups</span>
-      </a>
-      <a class="social-link" href="https://www.youtube.com/@soufianelmesbahi5" target="_blank" title="يوتيوب">
-        <span class="material-symbols-outlined">play_circle</span>
-      </a>
-      <a class="social-link" href="https://www.tiktok.com/@ssoufianelmesbahi3" target="_blank" title="تيك توك">
-        <span class="material-symbols-outlined">music_note</span>
-      </a>
+      <a class="social-link" href="#" title="إنستغرام">📸</a>
+      <a class="social-link" href="#" title="فيسبوك">📘</a>
+      <a class="social-link" href="#" title="يوتيوب">▶</a>
     </div>
     <span>© 2026 طقوس الحظ — Elmesbahi Vision. جميع الحقوق محفوظة.</span>
   </div>
@@ -1707,16 +1519,19 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
+/* Poem cards — staggered */
 document.querySelectorAll('.poem-card').forEach((el, i) => {
   el.dataset.delay = i * 80;
   revealObserver.observe(el);
 });
 
+/* Other elements */
 document.querySelectorAll('.stat-item, .press-card').forEach((el, i) => {
   el.dataset.delay = i * 100;
   revealObserver.observe(el);
 });
 
+/* Featured poem lines */
 document.querySelectorAll('.poem-line').forEach((el, i) => {
   el.dataset.delay = i * 120;
   revealObserver.observe(el);
@@ -1774,5 +1589,49 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
+<!-- ===================== EXTRA IMAGE SHOWCASE (ADDED) ===================== -->
+<section style="padding:100px 20px; background:var(--bg-2); border-top:1px solid var(--border);">
+  <div style="max-width:1100px; margin:0 auto; text-align:center;">
+
+    <div class="section-label" style="justify-content:center;">الصور</div>
+    <h2 class="section-title">عالم طقوس الحظ بصرياً</h2>
+
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:20px;
+      margin-top:50px;
+    ">
+
+      <!-- COVER IMAGE -->
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; overflow:hidden;">
+        <img src="cover.jpg" alt="Cover"
+             style="width:100%; height:320px; object-fit:cover;">
+        <div style="padding:16px; color:var(--text-2); font-size:0.9rem;">
+          غلاف الديوان
+        </div>
+      </div>
+
+      <!-- BOOK IMAGE -->
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; overflow:hidden;">
+        <img src="diwan.jpeg" alt="Book"
+             style="width:100%; height:320px; object-fit:cover;">
+        <div style="padding:16px; color:var(--text-2); font-size:0.9rem;">
+          الديوان الكامل
+        </div>
+      </div>
+
+      <!-- WRITER IMAGE -->
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; overflow:hidden;">
+        <img src="RACHID.jpg" alt="Writer"
+             style="width:100%; height:320px; object-fit:cover;">
+        <div style="padding:16px; color:var(--text-2); font-size:0.9rem;">
+          الشاعر رشيد الصويلحي
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 </body>
 </html>
